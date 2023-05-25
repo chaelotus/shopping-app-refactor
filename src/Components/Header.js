@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../img/로고.png";
 import icon from "../img/아이콘.png";
 import styled from "styled-components";
+import DropDown from "./DropDown";
 
 const HeaderContainer = styled.header`
   padding: 1.563rem 4.75rem;
@@ -47,6 +48,7 @@ const Header = () => {
       <IconWrapper>
         <img src={icon} />
       </IconWrapper>
+      <DropDown />
     </HeaderContainer>
   );
 };
