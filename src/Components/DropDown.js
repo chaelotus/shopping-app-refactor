@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { MdCardGiftcard, MdOutlineStarBorderPurple500 } from "react-icons/md";
 import palette from "../styles/colorPalette";
@@ -45,9 +45,25 @@ const MenuListWrapper = styled.li`
     margin-right: 10px;
   }
 `;
-const DropDown = () => {
+const DropDown = ({ setIsOpen }) => {
+  const outsideClick = useRef();
+
+  const toggleDropDown = (e) => {
+    //ref가 누른 값이 드롭다운이 포함되어 있지 않다면 setIsOpen
+    console.log(e.target, outsideClick);
+    if (outsideClick && !outsideClick.current.contains(e.target)) {
+      setIsOpen(false);
+    } else setIsOpen(true);
+  };
+
+  useEffect(() => {
+    //외부 영역 눌렀을 때
+    document.addEventListener("mousedown", toggleDropDown);
+    //clean up
+    return () => document.removeEventListener("mousedown", toggleDropDown);
+  });
   return (
-    <DropDownContainer>
+    <DropDownContainer ref={outsideClick} onClick={toggleDropDown}>
       <MenuWrapper>
         <MenuListWrapper>ooo님, 안녕하세요!</MenuListWrapper>
         <MenuListWrapper>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../img/로고.png";
 import icon from "../img/아이콘.png";
 import styled from "styled-components";
@@ -39,6 +39,11 @@ const IconWrapper = styled.div`
   }
 `;
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClickDropDown = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <HeaderContainer>
       <LogoWrapper>
@@ -46,9 +51,9 @@ const Header = () => {
         <p>COZ Shopping</p>
       </LogoWrapper>
       <IconWrapper>
-        <img src={icon} />
+        <img src={icon} onClick={handleClickDropDown} />
       </IconWrapper>
-      <DropDown />
+      {isOpen && <DropDown setIsOpen={setIsOpen} isOpen={isOpen} />}
     </HeaderContainer>
   );
 };
