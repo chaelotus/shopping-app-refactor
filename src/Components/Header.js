@@ -9,6 +9,8 @@ const HeaderContainer = styled.header`
   height: 80px;
   display: flex;
   align-items: center;
+  position: sticky;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
 `;
 const LogoWrapper = styled.div`
   display: flex;
