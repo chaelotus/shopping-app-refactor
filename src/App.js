@@ -10,13 +10,11 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/products/list" element={<Products />}></Route>
         <Route path="/bookmark" element={<Bookmark />}></Route>
       </Routes>
-
       <Footer />
     </BrowserRouter>
   );

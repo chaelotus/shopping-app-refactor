@@ -6,9 +6,9 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
-    body{
+    html,body{
         font-family: "Inter";
-        height: 100vh;
+
     }
     a{
         text-decoration: none;
