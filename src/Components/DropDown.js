@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { MdCardGiftcard, MdOutlineStarBorderPurple500 } from "react-icons/md";
 import palette from "../styles/colorPalette";
@@ -49,29 +50,34 @@ const DropDown = ({ setIsOpen }) => {
   const outsideClick = useRef();
 
   const toggleDropDown = (e) => {
-    //ref가 누른 값이 드롭다운이 포함되어 있지 않다면 setIsOpen
-    console.log(e.target, outsideClick);
-    if (outsideClick && !outsideClick.current.contains(e.target)) {
-      setIsOpen(false);
-    } else setIsOpen(true);
+    const node = e.target;
+    console.log(node);
+    if (node.id !== "icon-wrapper") setIsOpen(false);
   };
-
   useEffect(() => {
     //외부 영역 눌렀을 때
     document.addEventListener("mousedown", toggleDropDown);
     //clean up
-    return () => document.removeEventListener("mousedown", toggleDropDown);
+    return () => {
+      document.removeEventListener("mousedown", toggleDropDown);
+    };
   });
+
   return (
     <DropDownContainer ref={outsideClick} onClick={toggleDropDown}>
       <MenuWrapper>
         <MenuListWrapper>ooo님, 안녕하세요!</MenuListWrapper>
-        <MenuListWrapper>
-          <MdCardGiftcard /> 상품리스트 페이지
-        </MenuListWrapper>
-        <MenuListWrapper>
-          <MdOutlineStarBorderPurple500 /> 북마크 페이지
-        </MenuListWrapper>
+        <Link>
+          <MenuListWrapper>
+            <MdCardGiftcard /> 상품리스트 페이지
+          </MenuListWrapper>
+        </Link>
+        <Link>
+          {" "}
+          <MenuListWrapper>
+            <MdOutlineStarBorderPurple500 /> 북마크 페이지
+          </MenuListWrapper>
+        </Link>
       </MenuWrapper>
     </DropDownContainer>
   );

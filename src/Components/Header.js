@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import logo from "../img/로고.png";
 import icon from "../img/아이콘.png";
 import styled from "styled-components";
@@ -13,10 +14,14 @@ const HeaderContainer = styled.header`
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
 `;
 const LogoWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  width: 23%;
-  cursor: pointer;
+  width: 35%;
+  & .link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
   & img {
     width: 55px;
     height: 30px;
@@ -29,6 +34,7 @@ const LogoWrapper = styled.div`
     font-family: "Inter";
   }
 `;
+
 const IconWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -49,12 +55,15 @@ const Header = () => {
   return (
     <HeaderContainer>
       <LogoWrapper>
-        <img src={logo} />
-        <p>COZ Shopping</p>
+        <Link className="link" to="/">
+          <img src={logo} />
+          <p>COZ Shopping</p>
+        </Link>
       </LogoWrapper>
       <IconWrapper>
-        <img src={icon} onClick={handleClickDropDown} />
+        <img src={icon} id="icon-wrapper" onClick={handleClickDropDown} />
       </IconWrapper>
+
       {isOpen && <DropDown setIsOpen={setIsOpen} isOpen={isOpen} />}
     </HeaderContainer>
   );
