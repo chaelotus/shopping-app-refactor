@@ -9,8 +9,8 @@ const DropDownContainer = styled.div`
   height: 150px;
   border-radius: 12px;
   position: absolute;
-  right: 1.875rem;
-  top: 6.25rem;
+  right: 2rem;
+  top: 4.688rem;
   background-color: ${palette.white};
   filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.1));
 

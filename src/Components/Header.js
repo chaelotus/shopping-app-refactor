@@ -19,8 +19,6 @@ const LogoWrapper = styled.div`
     cursor: pointer;
     display: flex;
     align-items: center;
-    text-decoration: none;
-    color: inherit;
   }
   & img {
     width: 55px;
@@ -31,7 +29,6 @@ const LogoWrapper = styled.div`
     font-size: 32px;
     font-weight: 700;
     margin: 0;
-    font-family: "Inter";
   }
 `;
 
