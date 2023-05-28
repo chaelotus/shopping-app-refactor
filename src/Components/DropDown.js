@@ -51,7 +51,10 @@ const DropDown = ({ setIsOpen }) => {
 
   const toggleDropDown = (e) => {
     const node = e.target;
-    console.log(node);
+
+    if (outsideClick.current.contains(node)) {
+      return;
+    }
     if (node.id !== "icon-wrapper") setIsOpen(false);
   };
   useEffect(() => {
@@ -64,20 +67,21 @@ const DropDown = ({ setIsOpen }) => {
   });
 
   return (
-    <DropDownContainer ref={outsideClick} onClick={toggleDropDown}>
+    <DropDownContainer ref={outsideClick}>
       <MenuWrapper>
         <MenuListWrapper>ooo님, 안녕하세요!</MenuListWrapper>
-        <Link>
-          <MenuListWrapper>
-            <MdCardGiftcard /> 상품리스트 페이지
-          </MenuListWrapper>
-        </Link>
-        <Link>
-          {" "}
-          <MenuListWrapper>
-            <MdOutlineStarBorderPurple500 /> 북마크 페이지
-          </MenuListWrapper>
-        </Link>
+
+        <MenuListWrapper>
+          <Link to="/products/list">
+            <MdCardGiftcard /> 상품리스트 페이지{" "}
+          </Link>
+        </MenuListWrapper>
+
+        <MenuListWrapper>
+          <Link to="/bookmark">
+            <MdOutlineStarBorderPurple500 /> 북마크 페이지{" "}
+          </Link>
+        </MenuListWrapper>
       </MenuWrapper>
     </DropDownContainer>
   );
