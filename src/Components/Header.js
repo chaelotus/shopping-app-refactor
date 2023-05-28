@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../img/로고.png";
-import icon from "../img/아이콘.png";
+import logo from "../assets/로고.png";
+import icon from "../assets/아이콘.png";
 import styled from "styled-components";
 import DropDown from "./DropDown";
 

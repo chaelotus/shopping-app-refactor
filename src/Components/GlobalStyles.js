@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: "Inter";
+        height: 100vh;
     }
     a{
         text-decoration: none;

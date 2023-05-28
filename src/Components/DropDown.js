@@ -39,8 +39,8 @@ const MenuListWrapper = styled.li`
   list-style: none;
   height: 33%;
   &:nth-child(2) {
-    border-top: 0.5px solid ${palette.dropdownGray};
-    border-bottom: 0.5px solid ${palette.dropdownGray};
+    border-top: 0.5px solid ${palette.borderGray};
+    border-bottom: 0.5px solid ${palette.borderGray};
   }
   & svg {
     margin-right: 10px;

@@ -4,17 +4,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import Products from "./pages/Products";
 import Bookmark from "./pages/Bookmark";
-import GlobalStyle from "./Components/GlobalStyles";
+import Footer from "./Components/Footer";
+
 function App() {
   return (
     <BrowserRouter>
-      <GlobalStyle />
       <Header />
+
       <Routes>
         <Route path="/" element={<MainPage />}></Route>
         <Route path="/products/list" element={<Products />}></Route>
         <Route path="/bookmark" element={<Bookmark />}></Route>
       </Routes>
+
+      <Footer />
     </BrowserRouter>
   );
 }
