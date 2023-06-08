@@ -4,5 +4,10 @@ const palette = {
   footerFontSize: "12px",
   footerFontWeight: "400",
   white: "#FFFFFF",
+  mainFontSize: "16px",
+  productFontWeight:"800",
+  productDiscountColor:"#452CDD",
+  productPriceWeight:"500",
+  productDiscriptionWeight:"400",
 };
 export default palette;

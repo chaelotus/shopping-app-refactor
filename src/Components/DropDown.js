@@ -36,7 +36,7 @@ const MenuListWrapper = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
-  list-style: none;
+
   height: 33%;
   &:nth-child(2) {
     border-top: 0.5px solid ${palette.borderGray};
