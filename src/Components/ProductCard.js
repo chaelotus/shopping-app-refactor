@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { PriceFormatter } from "../utils/PriceFormatter";
 import palette from "../styles/colorPalette";
 
 const productType = {
@@ -74,7 +75,7 @@ const ProductCard = ({ productData }) => {
                   <ProductTitle color={`${palette.productDiscountColor}`}>{product.discountPercentage}%</ProductTitle>
                 </div>
                 <div>
-                  <p>{product.price}원</p>
+                  <p>{PriceFormatter(product.price)}원</p>
                 </div>
               </ProductInfo>
             </ProductCardList>
@@ -90,7 +91,7 @@ const ProductCard = ({ productData }) => {
                   <ProductTitle>관심고객수</ProductTitle>
                 </div>
                 <div>
-                  <p>{product.follower}</p>
+                  <p>{PriceFormatter(product.follower)}</p>
                 </div>
               </ProductInfo>
             </ProductCardList>
