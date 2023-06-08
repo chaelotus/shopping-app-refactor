@@ -19,7 +19,7 @@ const ProductCardList = styled.li`
   flex-direction: column;
   & img {
     width: 100%;
-    height: 215px;
+    height: 200px;
     margin-bottom: 6px;
     border-radius: 12px;
     border: 1px solid ${palette.borderGray};
