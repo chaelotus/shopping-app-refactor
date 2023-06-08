@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { MdStar } from "react-icons/md";
 import { PriceFormatter } from "../utils/PriceFormatter";
 import palette from "../styles/colorPalette";
 
@@ -18,6 +19,7 @@ const ProductWrapper = styled.ul`
 const ProductCardList = styled.li`
   display: flex;
   flex-direction: column;
+  position:relative;
   & img {
     width: 100%;
     height: 200px;
@@ -25,6 +27,16 @@ const ProductCardList = styled.li`
     border-radius: 12px;
     border: 1px solid ${palette.borderGray};
     cursor: pointer;
+
+  }
+  & .starIcon{
+    position: absolute;
+    color:${palette.starIconOffColor};
+    right: 0.63rem;
+    bottom:3.4rem;
+    width:30px;
+    height: 30px;
+
   }
 `;
 const ProductInfo = styled.section`
@@ -78,6 +90,7 @@ const ProductCard = ({ productData }) => {
                   <p>{PriceFormatter(product.price)}원</p>
                 </div>
               </ProductInfo>
+              <MdStar className="starIcon"/>
             </ProductCardList>
             );
             
@@ -94,6 +107,7 @@ const ProductCard = ({ productData }) => {
                   <p>{PriceFormatter(product.follower)}</p>
                 </div>
               </ProductInfo>
+              <MdStar className="starIcon"/>
             </ProductCardList>
             );
 
@@ -109,6 +123,7 @@ const ProductCard = ({ productData }) => {
                   <p>{product.sub_title}</p>
                 </div>
               </ProductInfo>
+              <MdStar className="starIcon"/>
             </ProductCardList>
             );
 
@@ -122,6 +137,7 @@ const ProductCard = ({ productData }) => {
                 </div>
                 <div></div>
               </ProductInfo>
+              <MdStar className="starIcon"/>
             </ProductCardList>
             );
           default:
